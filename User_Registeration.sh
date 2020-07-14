@@ -1,9 +1,12 @@
 #!/bin/bash
-read -p "Enter a Name: " input
+read -p "Enter First Name: " Fname
+
 pat="^([A-Z]{1}[a-zA-z]{2,})"
-if [[ $input =~ $pat ]]
+
+if [[ $Fname =~ $pat ]]
 then
-	echo MATCHING
+	echo Valid First Name
 else
-	echo NOT MATCHING
+	echo Invalid Last Name
 fi
+
