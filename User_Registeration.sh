@@ -46,7 +46,7 @@ fi
 read -p "Enter the Password: " pwd
 
 
-if [[ $pwd =~ ^(.{0,7}|[^A-Z]*)$ ]]
+if [[ $pwd =~ ^(.{0,7}|[^A-Z]*|[^0-9]*)$ ]]
 then 
         echo Password is INVALID
 else
