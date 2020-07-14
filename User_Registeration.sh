@@ -1,4 +1,5 @@
 #!/bin/bash -x
+shopt -s extglob
 read -p "Enter First Name: " Fname
 
 pat="^[A-Z]{1}[a-zA-z]{2,}"
@@ -43,11 +44,18 @@ fi
 
 
 read -p "Enter the Password: " pwd
-pwdPattern="^[a-zA-Z0-9!@#%$&()^-.+,]{8,}"
 
+pwdPattern="^[A-Za-z0-9!@#$%^&*_-]{8,}$"
+
+s="^[A-Z]*"
 if [[ $pwd =~ $pwdPattern ]]
 then
-	echo Password is valid
+	if [[ $pwd =~ $s ]]
+	then
+		echo Password is valid 
+	fi
 else
 	echo Invalid Password
 fi
+
+
