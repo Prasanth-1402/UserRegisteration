@@ -45,17 +45,12 @@ fi
 
 read -p "Enter the Password: " pwd
 
-pwdPattern="^[A-Za-z0-9!@#$%^&*_-]{8,}$"
 
-s="^[A-Z]*"
-if [[ $pwd =~ $pwdPattern ]]
-then
-	if [[ $pwd =~ $s ]]
-	then
-		echo Password is valid 
-	fi
+if [[ $pwd =~ ^(.{0,7}|[^A-Z]*)$ ]]
+then 
+        echo Password is INVALID
 else
-	echo Invalid Password
+	echo Password is VALID
 fi
 
 
