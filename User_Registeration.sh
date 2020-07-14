@@ -19,8 +19,6 @@ fi
 
 read -p "Enter Email-ID : " mailID
 
-#read -p "Enter Email-ID : " mailID
-
 Emailpat="^[a-z0-9]+([.+-]{1}[a-z0-9]{3,}){0,2}\@[a-z0-9]+([.]{1}[a-z]{2,4}){1,2}$"
 
 
@@ -41,4 +39,15 @@ then
 	echo Valid Number
 else
 	echo Invalid Number
+fi
+
+
+read -p "Enter the Password: " pwd
+pwdPattern="^[a-zA-Z0-9!@#%$&()^-.+,]{8,}"
+
+if [[ $pwd =~ $pwdPattern ]]
+then
+	echo Password is valid
+else
+	echo Invalid Password
 fi
