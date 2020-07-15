@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash 
 shopt -s extglob
 read -p "Enter First Name: " Fname
 
@@ -14,7 +14,7 @@ then
       echo Improper Last Name - Invalid
    fi
 else
-	echo Invalid Last Name
+	echo Invalid First Name
 fi
 
 
@@ -26,9 +26,9 @@ Emailpat="^[a-z0-9]+([.+-]{1}[a-z0-9]{3,}){0,2}\@[a-z0-9]+([.]{1}[a-z]{2,4}){1,2
 if [[ $mailID =~ $Emailpat ]]
 then
 
-	echo Email-ID is  valid
+	echo Email-ID  is  valid
 else
-	echo Invalid Email-ID  invalid
+	echo Invalid Email-ID 
 fi
 
 
@@ -46,7 +46,7 @@ fi
 read -p "Enter the Password: " pwd
 
 
-if [[ $pwd =~ ^(.{0,7}|[^A-Z]*|[^0-9]*)$ ]]
+if [[ $pwd =~ ^(.{0,7}|[^A-Z]*|[^0-9]*|[a-zA-Z0-9)*$ ]]
 then 
         echo Password is INVALID
 else
